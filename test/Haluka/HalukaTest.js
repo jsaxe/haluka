@@ -31,6 +31,11 @@ describe('Haluka', function () {
 
 	describe('listen()', function () {
 
+		before(() => {
+			server.getExpress().on('Server.Error', (err, req, res, next) => {
+				next()
+			})
+		})
 		after(() => server.close())
 
 		it('should start a HTTP server (with callback)', function (done) {
