@@ -30,11 +30,6 @@ class Router {
 		require(routeFile)
 		Helpers.mapRoutes(app)
 	}
-
-	routes()  {
-		return Helpers.getRoutes()
-	}
-
 }
 
 module.exports = Router

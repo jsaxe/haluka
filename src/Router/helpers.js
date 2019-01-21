@@ -30,7 +30,3 @@ Helpers.mapRoutes = function (app) {
 		app.use(route.path, route.controller)
 	})
 }
-
-Helpers.getRoutes = function () {
-	return routes
-}
