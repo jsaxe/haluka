@@ -1,0 +1,48 @@
+{
+  "name": "haluka",
+  "version": "1.0.0-beta.1",
+  "description": "A lightweight batteries included Express.js Wrapper",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ",
+    "test": "NODE_ENV=test mocha --globals use,map,error,app --reporter spec --bail --check-leaks --no-deprecation  test/",
+    "test:cover": "NODE_ENV=test nyc --reporter=html npm run test",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov npm test &&  cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
+    "lint": "eslint src test"
+  },
+  "repository": "git+https://github.com/hacktivistic/haluka.git",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "author": "Robin Panta <hacktivistic@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hacktivistic/haluka/issues"
+  },
+  "homepage": "https://github.com/hacktivistic/haluka#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.12.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "supertest": "^3.4.1"
+  },
+  "dependencies": {
+    "boxa": "^1.1.0",
+    "busboy-body-parser": "^0.3.2",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "http-errors": "^1.7.1",
+    "memorystore": "^1.6.0",
+    "mongoose": "^5.4.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "require-all": "^3.0.0",
+    "session-file-store": "^1.2.0"
+  }
+}

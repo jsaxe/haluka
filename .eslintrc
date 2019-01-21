@@ -1,0 +1,32 @@
+{
+	"root": true,
+	"parser": "babel-eslint",
+	"rules": {
+		"eol-last": "error",
+		"eqeqeq": [
+			"error",
+			"allow-null"
+		],
+		"indent": [
+			"error",
+			"tab"
+		],
+		"no-trailing-spaces": "error",
+		"no-unused-vars": [
+			"error",
+			{
+				"vars": "all",
+				"args": "none",
+				"ignoreRestSiblings": true
+			}
+		],
+		"comma-spacing": [
+			"error",
+			{
+				"before": false,
+				"after": true
+			}
+		],
+		"eslint-env": "es6"
+	}
+}
