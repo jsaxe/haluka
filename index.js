@@ -11,6 +11,8 @@
 /**
  * Bootstrapping out Library
  */
-var Haluka = require('./lib/Haluka')
+var Haluka = require('./src/Haluka/Haluka')
+var ServiceProvider = require('./src/Haluka/ServiceProvider')
 
 module.exports = Haluka
+module.exports.ServiceProvider = ServiceProvider
