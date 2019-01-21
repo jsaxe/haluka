@@ -9,3 +9,5 @@ require('./Database/DatabaseTest')
 // Haluka Test
 require('./Haluka/HalukaTest')
 require('./Haluka/HelpersTest')
+// Routing Test
+require('./Router/RouterTest')
