@@ -7,13 +7,18 @@
 
 var ServiceProvider = require('../Haluka/ServiceProvider')
 var Router = require('./Router')
+var express = require('express')
 
 class RoutingProvider extends ServiceProvider{
 
 	register () {
 
-		this.app.singleton('Router', function (app) {
-			return new Router()
+		this.app.singleton('Route', function (app) {
+			return new Router(app.appPath('Controllers'))
+		})
+
+		this.app.register('Router', function (app) {
+			return express.Router()
 		})
 
 	}
