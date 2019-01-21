@@ -39,6 +39,7 @@ Helpers.registerProviders = function (providers, container) {
 		require('../Session/SessionProvider'),		// Session
 		require('../Database/DatabaseProvider'),	// Database
 		require('../Auth/AuthProvider'),			// Auth
+		require('../Router/RouterProvider'),		// Router
 	]
 		.concat(providers)
 		.forEach(provider => {
