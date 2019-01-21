@@ -104,7 +104,6 @@ Helpers.setupErrorHandler = function (app) {
 	// Error Reporting
 	app.use(function(err, req, res, next) {
 		err.status = err.status
-		app.emit('Server.Error', err, req, res)
-		next()
+		app.emit('Server.Error', err, req, res, next)
 	}.bind(this))
 }
