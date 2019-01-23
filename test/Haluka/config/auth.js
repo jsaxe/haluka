@@ -6,11 +6,19 @@ module.exports = {
 
 		web: {
 
-			model: 'Haluka/Model/User',
+			strategy: 'local',
 			uid: 'username',
 			password: 'password'
 
 		},
+
+	},
+
+	strategies: {
+
+		local: (express, config) => {
+
+		}
 
 	}
 
