@@ -6,26 +6,9 @@ var Helpers = module.exports = {}
 
 Helpers.setupDefault = function (app) {
 	var config = app.use('Config').get('auth')
-	var guard = Helpers[`${config.default}Guarder`](config.guards[config.default])
-	app.map('DefaultGuard', guard)
-}
+	var guardConfig = config.guards[config.default]
 
-Helpers.webGuarder = function (config) {
-	//Passport
-	var passport = require('passport');
-	var LocalStrategy = require('passport-local').Strategy;
+	var strategyMethod = config.strategies[guardConfig.strategy](app.getExpress(), guardConfig)
 
-	// User Model
-	var User = use(config.model)
-
-	// Passport configs
-	passport.use(new LocalStrategy(User.authenticate()));
-	passport.serializeUser(User.serializeUser());
-	passport.deserializeUser(User.deserializeUser());
-
-	// Registering Passport
-	app().getExpress().use(passport.initialize());
-	app().getExpress().use(passport.session());
-
-	return passport
+	app.map('DefaultGuard', strategyMethod)
 }
