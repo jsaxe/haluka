@@ -35,6 +35,12 @@ describe('Helpers', function () {
 		})
 	})
 
+	describe('Package:booting provider', function () {
+		it('should boot package service', function () {
+			use('PackageLoader')
+		})
+	})
+
 	// Should be at last
 	describe('Haluka:buildExpress()', function () {
 		it('should build express app', function () {
