@@ -1,0 +1,10 @@
+{
+    "name": "test-package",
+    "version": "1.0.0",
+    "description": "A sample haluka pacakge",
+    "setup": "setup.js",
+    "postInstall": "node -v",
+    "repository": "https://github.com/hackvisitic/haluka-package",
+    "author": "Robin Panta <hacktivistic@gmail.com>",
+    "homepage": "https://haluka.robinpanta.com/hpm/package/package"
+}
