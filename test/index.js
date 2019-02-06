@@ -11,3 +11,5 @@ require('./Haluka/HalukaTest')
 require('./Haluka/HelpersTest')
 // Routing Test
 require('./Router/RouterTest')
+// Package Test
+require('./Package/PackageTest')
