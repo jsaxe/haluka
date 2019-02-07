@@ -22,11 +22,14 @@ var StoreKeeper = module.exports = {}
 StoreKeeper.MemoryStoreHandler = function (config) {
 	checkConfig('memory', config)
 	var MemoryStore = require('memorystore')(session)
-	return new MemoryStore({
+	var store = new MemoryStore({
 		checkPeriod: 86400000,
 		ttl: config.ttl * 60 * 1000 || 3600 // (min to ms)
 	})
-
+	store.close = function () {
+		store.stopInterval() // Stopping MemoryStore
+	}
+	return store
 }
 
 /**
@@ -36,12 +39,16 @@ StoreKeeper.FileStoreHandler = function (config) {
 	checkConfig('file', config)
 	var FileStore = require('session-file-store')(session);
 
-	return new FileStore({
+	var store = new FileStore({
 		path: config.path,
 		ttl: config.ttl * 60 || 360,  // ( min to seconds)
 		reapAsync: true,
 		reapSyncFallback: true
 	})
+	store.close = function () {
+		clearInterval(store.options.reapIntervalObject)
+	}
+	return store
 }
 
 
