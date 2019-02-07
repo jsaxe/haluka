@@ -39,7 +39,7 @@ describe('StoreKeeper', function () {
 
 		afterEach(function () {
 			if (this.store)
-				this.store.stopInterval() // Stopping MemoryStore
+				this.store.close() // Stopping MemoryStore
 		})
 
 		it('should throw when config not provided', function () {
@@ -65,7 +65,7 @@ describe('StoreKeeper', function () {
 
 		afterEach(function () {
 			if (this.store) {
-				clearInterval(this.store.options.reapIntervalObject)
+				this.store.close()
 			}
 		})
 
