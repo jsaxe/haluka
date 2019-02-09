@@ -12,19 +12,19 @@ describe('Package', function () {
 		it('should throw error when package doesn\'t exist', function () {
 			expect(() => {
 				load('test1')
-			}).to.throw('Invalid Package. `haluka.json` file not found in package root of `test1`.')
+			}).to.throw('Invalid Package. `package.json` file not found in package root of `test1`.')
 		})
 
 		it('should throw error when setup config doesn\'t exist', function () {
 			expect(() => {
 				load('test2')
-			}).to.throw('Invalid Package Setup Script for `test2`.')
+			}).to.throw('Invalid Package Main Script for `test2`.')
 		})
 
 		it('should throw error when setup file doesn\'t exist', function () {
 			expect(() => {
 				load('test3')
-			}).to.throw('Setup file `setup.js` not found in `test3` package')
+			}).to.throw('Main file `setup.js` not found in `test3` package')
 		})
 
 		it('should successfully load package', function () {
