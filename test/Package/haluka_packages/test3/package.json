@@ -1,4 +1,4 @@
 {
 	"name": "test3",
-	"setup": "setup.js"
+	"main": "setup.js"
 }
