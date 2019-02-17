@@ -10,28 +10,10 @@
 /**
  * Dependencies
  */
-var Boxa = require('boxa');
+var Blade = require('axe-blade').Application
 var Helpers = require('./helpers')
-var path = require('path')
 
-class Haluka extends Boxa{
-
-
-	constructor (basePath, providers = []) {
-
-		// Parent Constructor
-		super()
-
-		// Register Paths
-		Helpers.registerPaths(basePath, this)
-
-		// Global Helper Methods
-		Helpers.registerGlobals(this)
-
-		// Load Service Providers
-		Helpers.registerProviders(providers, this)
-
-	}
+class Haluka extends Blade {
 
 	bootstrap () {
 
@@ -93,74 +75,6 @@ class Haluka extends Boxa{
 		}else{
 			throw new Error('Server not listening.')
 		}
-	}
-
-	/* path methids */
-
-	/**
-	 * Returns path string relate to base path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	basePath (...args) {
-		return path.join(Helpers.basePath, ...args)
-	}
-
-	/**
-	 * Returns path string relate to public path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	publicPath (...args) {
-		return path.join(this.basePath('public'), ...args)
-	}
-
-	/**
-	 * Returns path string relate to config path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	configPath (...args) {
-		return path.join(this.basePath('config'), ...args)
-	}
-
-	/**
-	 * Returns path string relate to storage path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	storagePath (...args) {
-		return path.join(this.basePath('storage'), ...args)
-	}
-
-	/**
-	 * Returns path string relate to app path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	appPath (...args) {
-		return path.join(this.basePath('app'), ...args)
-	}
-
-	/**
-	 * Returns path string relate to resources path
-	 *
-	 * @param {string} dir
-	 *
-	 * @public
-	 */
-	resourcesPath (...args) {
-		return path.join(this.basePath('resources'), ...args)
 	}
 
 }
