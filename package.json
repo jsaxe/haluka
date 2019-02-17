@@ -10,20 +10,20 @@
     "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov npm test &&  cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint src test"
   },
-  "repository": "git+https://github.com/hacktivistic/haluka.git",
+  "repository": "git+https://github.com/jsaxe/haluka.git",
   "files": [
     "lib",
     "src"
   ],
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=7.10.1"
   },
   "author": "Robin Panta <hacktivistic@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hacktivistic/haluka/issues"
+    "url": "https://github.com/jsaxe/haluka/issues"
   },
-  "homepage": "https://github.com/hacktivistic/haluka#readme",
+  "homepage": "https://github.com/jsaxe/haluka#readme",
   "devDependencies": {
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",

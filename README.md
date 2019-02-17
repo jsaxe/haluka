@@ -8,7 +8,7 @@
 [![Dependencies][dependencies]][david-dm]
 [![License: MIT][license-image]][license-link]
 
-[Haluka](https://haluka.robinpanta.com/) is a lightweight express.js setup for directly diving into project development.
+[Haluka](https://haluka.jsaxe.com/) is a lightweight express.js setup for directly diving into project development.
 
 <img src="https://i.imgur.com/oUzUUsC.png" width="250px" align="right" hspace="30px" vspace="100px">
 
@@ -24,11 +24,11 @@
 
 ## Getting Started
 
-This repo is the library repo of Haluka. To start developing, go to [Haluka App repo](https://github.com/hacktivistic/haluka-app)
+This repo is the library repo of Haluka. To start developing, go to [Haluka App repo](https://github.com/jsaxe/haluka-app)
 
 ## Node
 
-Axe Core is supposed to run on platforms with `Node.js >=0.10.0`
+Haluka is supposed to run on platforms with `Node.js >=7.10.1`
 
 ## Development
 
@@ -76,18 +76,17 @@ To prevent this, let's all commit to commenting. 😉
 ## Author
 
 Robin Panta (Hacktivistic) 😎  &nbsp; [GitHub](https://github.com/hacktivistic) | [Blog](https://robinpanta.com)
-> I prefer `yarn` over `npm`
 
 [node-image]: https://img.shields.io/node/v/haluka.svg?style=flat-square
 [npm-image]: https://img.shields.io/npm/v/haluka.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/haluka
-[travis-image]: https://travis-ci.org/hacktivistic/haluka.svg?branch=master
-[travis-url]: https://travis-ci.org/hacktivistic/haluka
-[coveralls-image]: https://coveralls.io/repos/github/hacktivistic/haluka/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/hacktivistic/haluka?branch=master
-[dependencies]: https://david-dm.org/hacktivistic/haluka/status.svg
-[dev-dependencies]: https://david-dm.org/hacktivistic/haluka/dev-status.svg
-[david-dm]: https://david-dm.org/hacktivistic/haluka
-[david-dm-dev]: https://david-dm.org/hacktivistic/haluka?type=dev
+[travis-image]: https://travis-ci.org/jsaxe/haluka.svg?branch=master
+[travis-url]: https://travis-ci.org/jsaxe/haluka
+[coveralls-image]: https://coveralls.io/repos/github/jsaxe/haluka/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/jsaxe/haluka?branch=master
+[dependencies]: https://david-dm.org/jsaxe/haluka/status.svg
+[dev-dependencies]: https://david-dm.org/jsaxe/haluka/dev-status.svg
+[david-dm]: https://david-dm.org/jsaxe/haluka
+[david-dm-dev]: https://david-dm.org/jsaxe/haluka?type=dev
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-link]: https://opensource.org/licenses/MIT
