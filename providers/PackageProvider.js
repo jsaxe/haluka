@@ -5,8 +5,8 @@
 
 'use strict'
 
-var ServiceProvider = require('../Haluka/ServiceProvider')
-var Package = require('./Package')
+var ServiceProvider = require('../src/Haluka/ServiceProvider')
+var Package = require('../src/Package/Package')
 
 class PackageProvider extends ServiceProvider{
 
