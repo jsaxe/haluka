@@ -120,13 +120,9 @@ describe('Session', function () {
 					adapter: 'memorystore',
 				},
 
-				file: {
-					adapter: 'file',
-					path: '',
-					reapAsync: true,
-					reapSyncFallback: true
-				},
-
+				newstore: {
+					adapter: 'newadapter'
+				}
 
 			},
 
@@ -145,17 +141,16 @@ describe('Session', function () {
 					return expressSession
 				},
 
-				file: function (expressSession, config) {
+				newadapter: function (expressSession, config) {
 
-					var FileStore = require('session-file-store')(expressSession);
-					var store = new FileStore(config)
-					store.close = function () {
-						clearInterval(store.options.reapIntervalObject)
+					var store = {
+						on: () => {}
 					}
-
+					store.close = () => {return}
 					return store
 
 				}
+
 			}
 
 		}
@@ -182,13 +177,13 @@ describe('Session', function () {
 
 		it('should return session middleware object', function () {
 
-			config.store = 'file'
+			config.store = 'memory'
 			var session = new Session(config)
 			session.getMiddleware()
 			session.getMiddleware()
 			session.destroy()
 
-			config.store = 'memory'
+			config.store = 'newstore'
 			session = new Session(config)
 			session.getMiddleware()
 			session.destroy()
