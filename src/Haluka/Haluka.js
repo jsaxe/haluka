@@ -15,13 +15,15 @@ var Helpers = require('./helpers')
 
 class Haluka extends Blade {
 
-	bootstrap () {
+	bootstrapServer (middlewares) {
 
 		// Builds Express Server
-		Helpers.buildExpress(this)
+		this.express = Helpers.buildExpress(this.use('Axe/Config').get('express'))
 
 		// Register Global Middlewares
-		Helpers.registerGlobalMiddlewares(this)
+		Helpers.registerMiddlewares(middlewares, this)
+		this.middlewares = middlewares.namedMiddleware
+
 	}
 
 	/**
@@ -30,7 +32,7 @@ class Haluka extends Blade {
 	 * @returns {Object}
 	 */
 	getExpress() {
-		return this.resolve('Express') // Resolved by Boxa
+		return this.express
 	}
 
 
@@ -51,14 +53,15 @@ class Haluka extends Blade {
 	 */
 	listen (port, callback) {
 
-		var app = this.getExpress()
+		var express = this.getExpress()
+		var events = this.use('Axe/Events')
 
 		// Setup Error-Handler just before listening
-		Helpers.setupErrorHandler(app)
+		Helpers.setupErrorHandler(express, events)
 
-		app.listen(port, function() {
-			app.emit('Server.Listening', this)
-			app.set('http', this)
+		express.listen(port, function() {
+			events.fire('Server.Listening', this)
+			express.set('http', this)
 			if (typeof callback === 'function')
 				callback()
 		})
@@ -68,10 +71,12 @@ class Haluka extends Blade {
 	 *  Closes the active HTTP Server
 	 */
 	close () {
-		var app = this.getExpress()
-		if (app.get('http')) {
-			app.get('http').close()
-			app.set('http', null)
+		var express = this.getExpress()
+		var events = this.use('Axe/Events')
+		if (express.get('http')) {
+			express.get('http').close()
+			express.set('http', null)
+			events.fire('Server.Closed', this)
 		}else{
 			throw new Error('Server not listening.')
 		}
