@@ -12,16 +12,6 @@
 
 <img src="https://i.imgur.com/oUzUUsC.png" width="250px" align="right" hspace="30px" vspace="100px">
 
-## Features
-
-1. Provides `config` and `env` services.
-2. Provides Database libraries along with configuration.
-3. Provides Passport.js based Local-Strategy authentication.
-4. Based on `Boxa` IoC Container.
-5. Fully pre-configured `express` setup
-6. Provides minimal level of directory structure
-7. Provides `MemoryStore` and `FileStore` for session stores.
-
 ## Getting Started
 
 This repo is the library repo of Haluka. To start developing, go to [Haluka App repo](https://github.com/jsaxe/haluka-app)
