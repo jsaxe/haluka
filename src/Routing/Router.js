@@ -17,8 +17,8 @@ class Router {
 	/**
 	 * Constructor
 	 */
-	constructor (controllerPath) {
-		Helpers.registerGlobalRoutingHelpers(controllerPath)
+	constructor (app) {
+		this.app = app
 	}
 
 	point(path, controller) {
@@ -26,9 +26,8 @@ class Router {
 	}
 
 	loadRoutePointersFrom(routeFile) {
-		var app = use('Express')
 		require(routeFile)
-		Helpers.mapRoutes(app)
+		Helpers.mapRoutes(this.app.getExpress())
 	}
 }
 
