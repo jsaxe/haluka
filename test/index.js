@@ -1,15 +1,20 @@
-// Env Test
-require('./Env/EnvTest')
-// StoreKeeper
-require('./Session/StoreKeeperTest')
-// Session Provider
-require('./Session/SessionProviderTest')
-// Database
+// Auth Test
+require('./Auth/AuthTest')
+
+// Database Test
 require('./Database/DatabaseTest')
+
 // Haluka Test
 require('./Haluka/HalukaTest')
-require('./Haluka/HelpersTest')
-// Routing Test
-require('./Router/RouterTest')
+
 // Package Test
 require('./Package/PackageTest')
+
+// Routing Test
+require('./Routing/RouterTest')
+
+// Session Test
+require('./Session/SessionTest')
+
+// Integration Test
+require('./integration/index')
