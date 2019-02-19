@@ -1,6 +1,6 @@
 {
   "name": "haluka",
-  "version": "1.3.4",
+  "version": "2.0.0-beta.1",
   "description": "A lightweight batteries included Express.js Wrapper",
   "main": "index.js",
   "scripts": {
