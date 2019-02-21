@@ -7,7 +7,7 @@ var Helpers = module.exports = {}
 Helpers.createConnection = async function (app, connection, config) {
 	var driver = config.driver
 	var conn = await Helpers[`${driver}Connector`](config)
-	app.getExpress().emit('Database.Connected', connection, config)
+	app.fire('Database.Connected', connection, config)
 	return conn
 }
 
