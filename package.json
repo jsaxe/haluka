@@ -12,6 +12,7 @@
   },
   "repository": "git+https://github.com/jsaxe/haluka.git",
   "files": [
+	"src",
     "providers"
   ],
   "engines": {
