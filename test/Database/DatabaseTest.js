@@ -29,8 +29,8 @@ describe('Database', function () {
 	}
 
 	var app = {
-		getExpress: () => {
-			return { emit: () => {} }
+		fire: () => {
+			return
 		}
 	}
 
