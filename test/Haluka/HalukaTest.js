@@ -52,7 +52,7 @@ describe('Haluka', function () {
 	describe('listen()', function () {
 
 		before(() => {
-			haluka.use('Axe/Events').on('Server.Error', (err, req, res, next) => {
+			haluka.use('Axe/Events').on('Server.Error.*', (error, app, err, req, res, next) => {
 				next()
 			})
 		})
