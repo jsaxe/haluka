@@ -15,7 +15,7 @@ class RoutingProvider extends ServiceProvider{
 
 		this.app.singleton('Haluka/Routing/Route', function (app) {
 			return {
-				Route: 	new Router(),
+				Route: 	new Router(app),
 				to: function (controller) {
 					return require(require('path').join(app.appPath('Controllers'), controller))
 				}
