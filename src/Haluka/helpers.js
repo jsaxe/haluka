@@ -52,7 +52,7 @@ Helpers.setupErrorHandler = function (express, events) {
 	// Error Reporting
 	express.use(function(err, req, res, next) {
 		events.fire('Server.Error.' + err.status, err, req, res, next)
-		next()
+		//next()
 	}.bind(this))
 }
 
