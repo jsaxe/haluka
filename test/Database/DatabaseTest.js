@@ -29,8 +29,12 @@ describe('Database', function () {
 	}
 
 	var app = {
-		fire: () => {
-			return
+		use: () => {
+			return {
+				fire: () => {
+					return
+				}
+			}
 		}
 	}
 
