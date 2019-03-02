@@ -18,7 +18,7 @@ class Auth {
 		Helpers.setupDefault(app)
 	}
 
-	LoginNeededMiddleware (loginURL) {
+	AuthenticationMiddleware (loginURL) {
 		return Helpers.authCheckMiddleware(loginURL)
 	}
 
