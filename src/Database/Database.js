@@ -20,7 +20,8 @@ class Database {
 		// Setup All Database
 		for (var conn in this.config.connections) {
 			var connection = this.config.connections[conn]
-			this.connections[conn] = await Helpers.createConnection(this.app, conn, connection)
+			this.connections[conn] = await Helpers.createConnection(connection)
+			this.app.use('Axe/Events').fire('Database.Connected', conn, connection)
 		}
 		if (!!this.config['default'] && !!this.config['connections'] && this.config.default in this.config['connections']) {
 			this.connections['default'] = this.connections[this.config.default]
