@@ -4,10 +4,9 @@
 
 var Helpers = module.exports = {}
 
-Helpers.createConnection = async function (app, connection, config) {
+Helpers.createConnection = async function (config) {
 	var driver = config.driver
 	var conn = await Helpers[`${driver}Connector`](config)
-	app.use('Axe/Events').fire('Database.Connected', connection, config)
 	return conn
 }
 
