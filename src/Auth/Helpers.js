@@ -17,7 +17,8 @@ Helpers.setupDefault = function (app) {
 Helpers.authCheckMiddleware = function (returnTo) {
 	// Authentication Middleware
 	return function (req, res, next) {
-		if (!req.isAuthenticated || !req.isAuthenticated()) {
+		 /* istanbul ignore next */ 
+		if  (!req.isAuthenticated || !req.isAuthenticated()) {
 			if (req.session) {
 				req.session.returnTo = req.originalUrl || req.url;
 			}
