@@ -18,6 +18,10 @@ class Auth {
 		Helpers.setupDefault(app)
 	}
 
+	LoginNeededMiddleware (loginURL) {
+		return Helpers.authCheckMiddleware(loginURL)
+	}
+
 }
 
 module.exports = Auth
