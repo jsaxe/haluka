@@ -19,9 +19,11 @@ class Haluka extends Blade {
 
 		// Builds Express Server
 		this.express = Helpers.buildExpress(this.use('Axe/Config').get('express'))
+		this.use('Axe/Events').fire('Express.Bootstrapped', this.express)
 
 		// Register Global Middlewares
 		Helpers.registerMiddlewares(middlewares, this)
+		this.use('Axe/Events').fire('Express.MiddlewaresRegistered', this.express)
 		this.middlewares = middlewares.namedMiddleware
 
 	}
