@@ -45,8 +45,10 @@ class Database {
 	}
 
 	async close (conn) {
-		if (!!this.connections[conn])
+		if (!!this.connections[conn]) {
 			await (this.connections[conn]).close()
+			this.app.use('Axe/Events').fire('Database.Closed', conn, this.connections[conn])
+		}
 	}
 
 	async closeAll () {
