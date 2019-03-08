@@ -6,6 +6,7 @@
 'use strict'
 
 var Helpers = require('./helpers')
+var _ = require('lodash')
 
 class Database {
 
@@ -52,7 +53,7 @@ class Database {
 	}
 
 	async closeAll () {
-		for (var conn in this.connections) {
+		for (var conn in _.omit(this.connections, ['default'])) {
 			await this.close(conn)
 		}
 	}
