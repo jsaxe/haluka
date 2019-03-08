@@ -44,6 +44,10 @@ Helpers.buildExpress = function (expressConfig) {
  * Sets up Error Handler
  */
 Helpers.setupErrorHandler = function (express, events) {
+
+	// Global Helper for Error
+	global.error = createError
+
 	// For Handling 404
 	express.use(function (req, res, next) {
 		next(createError(404))
