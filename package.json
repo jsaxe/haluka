@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js ",
-    "test": "NODE_ENV=test mocha --globals use,map,error,app,to --reporter spec --bail --check-leaks --no-deprecation  test/",
+    "test": "NODE_ENV=test mocha --globals use,map,error,app --reporter spec --bail --check-leaks --no-deprecation  test/",
     "test:cover": "NODE_ENV=test nyc --reporter=html npm run test",
     "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text-lcov npm test &&  cat ./coverage/lcov.info | coveralls && rm -rf ./coverage",
     "lint": "eslint src test"
